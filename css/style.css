@@ -193,30 +193,36 @@ nav {
 }
 
 /* Contacto Formulario */
-.contacto-form {
+
+.formulario-contacto {
     background-color: #FFFFFF;
     padding: 4rem 2rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 4rem auto;
     border: 1px solid #E0E0E0;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.contacto-form form {
+.formulario-contacto h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0077FF;
+}
+
+.formulario-contacto form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.contacto-form label {
+.formulario-contacto label {
     font-weight: 600;
-    margin-bottom: 0.5rem;
     color: #333;
 }
 
-.contacto-form input,
-.contacto-form textarea {
+.formulario-contacto input,
+.formulario-contacto textarea {
     padding: 0.75rem 1rem;
     border: 1px solid #CCC;
     border-radius: 6px;
@@ -226,11 +232,27 @@ nav {
     transition: border-color 0.3s;
 }
 
-.contacto-form input:focus,
-.contacto-form textarea:focus {
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
     border-color: #0077FF;
     outline: none;
 }
+
+.formulario-contacto button {
+    background-color: #0077FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario-contacto button:hover {
+    background-color: #005FCC;
+}
+
 
 /* CTA Final */
 .cta-final {

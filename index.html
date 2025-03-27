@@ -9,135 +9,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap"
         rel="stylesheet">
     <style>
-        .hero {
-            background: linear-gradient(to right, #0077FF, #00B2FF);
-            color: #FFFFFF;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .nosotros {
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background-color: #FFFFFF;
-            padding: 4rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
         }
 
-        .nosotros h2 {
-            font-size: 2rem;
-            color: #0077FF;
-            margin-bottom: 1rem;
+        header.minimized {
+            padding: 0.5rem 2rem !important;
         }
 
-        .nosotros p {
-            color: #444;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .portafolio {
-            background-color: #FAFAFA;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .cta-final {
-            background-color: #FFFFFF;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid #eee;
-        }
-
-        .cta-final h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #1F1F1F;
-        }
-
-        .formulario-contacto {
-            background-color: #FFFFFF;
-            padding: 4rem 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            border: 1px solid #E0E0E0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        .formulario-contacto h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #0077FF;
-        }
-
-        .formulario-contacto form {
+        nav {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .menu-toggle {
+            display: none;
             flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .formulario-contacto label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .formulario-contacto input,
-        .formulario-contacto textarea {
-            padding: 0.75rem 1rem;
-            border: 1px solid #CCC;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            background-color: #FAFAFA;
-            transition: border-color 0.3s;
-        }
-
-        .formulario-contacto input:focus,
-        .formulario-contacto textarea:focus {
-            border-color: #0077FF;
-            outline: none;
-        }
-
-        .formulario-contacto button {
-            background-color: #0077FF;
-            color: #FFFFFF;
-            border: none;
-            border-radius: 6px;
-            padding: 0.75rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
-        .formulario-contacto button:hover {
-            background-color: #005FCC;
+        .menu-toggle span {
+            background: #1F1F1F;
+            height: 3px;
+            margin: 4px 0;
+            width: 25px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem 2rem;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <header id="main-header">
         <nav>
             <div class="logo">Fideus Media</div>
+            <div class="menu-toggle" onclick="document.querySelector('.menu').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="menu">
                 <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
@@ -148,7 +87,7 @@
         </nav>
     </header>
 
-    <main>
+    <main style="padding-top: 100px">
         <section class="hero">
             <div class="hero-content">
                 <h1>Impulsamos marcas auténticas</h1>
@@ -179,6 +118,7 @@
         </section>
 
         <section class="formulario-contacto">
+
             <h2>Contáctanos</h2>
             <form action="#" method="post">
                 <label for="nombre">Nombre</label>
@@ -204,6 +144,18 @@
     <footer>
         <p>&copy; 2025 Fideus Media. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Minimiza el header al hacer scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('minimized');
+            } else {
+                header.classList.remove('minimized');
+            }
+        });
+    </script>
 </body>
 
 </html>
