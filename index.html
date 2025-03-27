@@ -1,125 +1,207 @@
-<!-- Proyecto estructurado por carpetas -->
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fideus Media | Agencia de Marketing Digital</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Fideus Media</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="./js/scripts.js"></script>
+    <style>
+        .hero {
+            background: linear-gradient(to right, #0077FF, #00B2FF);
+            color: #FFFFFF;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nosotros {
+            background-color: #FFFFFF;
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .nosotros h2 {
+            font-size: 2rem;
+            color: #0077FF;
+            margin-bottom: 1rem;
+        }
+
+        .nosotros p {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .portafolio {
+            background-color: #FAFAFA;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cta-final {
+            background-color: #FFFFFF;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .cta-final h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1F1F1F;
+        }
+
+        .formulario-contacto {
+            background-color: #FFFFFF;
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .formulario-contacto h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0077FF;
+        }
+
+        .formulario-contacto form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .formulario-contacto label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .formulario-contacto input,
+        .formulario-contacto textarea {
+            padding: 0.75rem 1rem;
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            transition: border-color 0.3s;
+        }
+
+        .formulario-contacto input:focus,
+        .formulario-contacto textarea:focus {
+            border-color: #0077FF;
+            outline: none;
+        }
+
+        .formulario-contacto button {
+            background-color: #0077FF;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .formulario-contacto button:hover {
+            background-color: #005FCC;
+        }
+    </style>
 </head>
 
-<body class="bg-white text-gray-800">
-    <!-- Header -->
-    <header class="flex justify-between items-center p-6 shadow-md sticky top-0 bg-white z-50">
-        <h1 class="text-xl font-bold">Fideus Media</h1>
-        <nav class="space-x-4 hidden md:flex">
-            <a href="#servicios" class="hover:text-yellow-500">Servicios</a>
-            <a href="#portafolio" class="hover:text-yellow-500">Portafolio</a>
-            <a href="#nosotros" class="hover:text-yellow-500">Nosotros</a>
-            <a href="#contacto" class="hover:text-yellow-500">Contacto</a>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Fideus Media</div>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section
-        class="h-screen flex items-center justify-center text-center px-4 sm:px-6 md:px-10 bg-cover bg-center relative"
-        style="background-image: url('./img/hero.jpg');">
-        <div>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in-up">Impulsamos marcas con estrategia, contenido y
-                diseño</h2>
-            <p class="mb-6 text-lg fade-in-up">Tu agencia creativa especializada en el sector gastronómico</p>
-            <a href="#contacto"
-                class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-full transition fade-in-up">Contáctanos</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Impulsamos marcas auténticas</h1>
+                <p>Somos una agencia creativa enfocada en conectar negocios con personas a través de contenido, diseño y
+                    estrategia.</p>
+                <a href="servicios.html" class="btn-cta">Ver servicios</a>
+            </div>
+        </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="py-20 bg-white text-center">
-        <h2 class="text-3xl font-bold mb-10 fade-in-up">Servicios</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
-            <div class="p-6 shadow-md rounded-lg border hover:shadow-lg fade-in-up">
-                <h3 class="font-semibold text-xl mb-2">Social Media</h3>
-                <p>Gestión profesional de redes sociales con estrategia y creatividad.</p>
-            </div>
-            <div class="p-6 shadow-md rounded-lg border hover:shadow-lg fade-in-up">
-                <h3 class="font-semibold text-xl mb-2">Contenido</h3>
-                <p>Producción de contenido visual: fotografía, reels, video y más.</p>
-            </div>
-            <div class="p-6 shadow-md rounded-lg border hover:shadow-lg fade-in-up">
-                <h3 class="font-semibold text-xl mb-2">Branding</h3>
-                <p>Diseño de marca, identidad visual y comunicación coherente.</p>
-            </div>
-            <div class="p-6 shadow-md rounded-lg border hover:shadow-lg fade-in-up">
-                <h3 class="font-semibold text-xl mb-2">Desarrollo Web</h3>
-                <p>Sitios web modernos, funcionales y hechos a tu medida.</p>
-            </div>
-        </div>
-    </section>
+        <section class="nosotros">
+            <h2>¿Quiénes somos?</h2>
+            <p>Fideus Media nace con la intención de ayudar a negocios gastronómicos, educativos y de salud a mejorar su
+                presencia digital. Nos especializamos en contenido de valor, branding y soluciones web accesibles.</p>
+            <a href="nosotros.html" class="btn-cta">Conócenos</a>
+        </section>
 
-    <!-- Portafolio -->
-    <section id="portafolio" class="py-20 bg-gray-50 text-center">
-        <h2 class="text-3xl font-bold mb-10 fade-in-up">Portafolio</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6">
-            <div class="bg-white p-4 shadow rounded fade-in-up">Proyecto 1</div>
-            <div class="bg-white p-4 shadow rounded fade-in-up">Proyecto 2</div>
-            <div class="bg-white p-4 shadow rounded fade-in-up">Proyecto 3</div>
-        </div>
-    </section>
-
-    <!-- Nosotros -->
-    <section id="nosotros" class="py-20 bg-white text-center px-6">
-        <h2 class="text-3xl font-bold mb-10 fade-in-up">Nosotros</h2>
-        <p class="max-w-3xl mx-auto fade-in-up">Somos una agencia de marketing digital especializada en contenido
-            gastronómico. Nos enfocamos en ayudar a restaurantes, cafeterías y negocios del sector HORECA a conectar con
-            su audiencia a través de contenido de calidad y estrategia creativa.</p>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-yellow-100 text-center px-6">
-        <h2 class="text-3xl font-bold mb-6 fade-in-up">Contáctanos</h2>
-        <p class="mb-6 fade-in-up">¿Listo para trabajar juntos? Escríbenos por WhatsApp o llena el formulario.</p>
-        <form class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md fade-in-up">
-            <div class="mb-4 text-left">
-                <label for="nombre" class="block font-semibold mb-1">Nombre</label>
-                <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded px-4 py-2"
-                    required />
+        <section class="portafolio">
+            <div class="proyecto">
+                <img src="./img/restaurante-hidalgo.jpg" alt="Restaurante Hidalgo">
+                <h2>Restaurante Hidalgo</h2>
+                <p>Fotografía y manejo de redes sociales para negocio de comida mexicana en Toluca.</p>
             </div>
-            <div class="mb-4 text-left">
-                <label for="email" class="block font-semibold mb-1">Correo electrónico</label>
-                <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded px-4 py-2"
-                    required />
+            <div class="proyecto">
+                <img src="./img/universidad-enfermeria.jpg" alt="Universidad de Enfermería">
+                <h2>Universidad de Enfermería</h2>
+                <p>Diseño de reels, gráficas informativas y piezas para campañas de inscripción.</p>
             </div>
-            <div class="mb-4 text-left">
-                <label for="mensaje" class="block font-semibold mb-1">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="4" class="w-full border border-gray-300 rounded px-4 py-2"
+        </section>
+
+        <section class="formulario-contacto">
+            <h2>Contáctanos</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?"
                     required></textarea>
-            </div>
-            <button type="submit"
-                class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-full">Enviar</button>
-        </form>
-        <a href="https://wa.me/521XXXXXXXXXX" target="_blank"
-            class="mt-6 inline-block bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full fade-in-up">Escribir
-            por WhatsApp</a>
-    </section>
 
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/521XXXXXXXXXX"
-        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50"
-        target="_blank" aria-label="WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M16.72 11.06a4.25 4.25 0 00-3.57-3.57M9 3v1m0 16v1m4.21-1.79A7 7 0 115 5.79m7 13.42A7 7 0 005.79 5" />
-        </svg>
-    </a>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-6">
+        <section class="cta-final">
+            <h2>¿Listo para trabajar con nosotros?</h2>
+            <a href="contacto.html" class="btn-cta">Contáctanos</a>
+        </section>
+    </main>
+
+    <footer>
         <p>&copy; 2025 Fideus Media. Todos los derechos reservados.</p>
     </footer>
 </body>
